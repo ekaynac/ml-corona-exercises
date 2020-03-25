@@ -14,8 +14,8 @@ theta = zeros(4, 1); % initialize fitting parameters
 
 
 % Some gradient descent settings
-iterations = 100000;
-alpha = 0.00001; %can be editted
+iterations = 1000000;
+alpha = 0.000003; %can be editted
 
 
 fprintf('\nRunning Gradient Descent ...\n')
