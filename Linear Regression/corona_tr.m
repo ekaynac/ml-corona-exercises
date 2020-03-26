@@ -9,13 +9,14 @@ m = length(y); % number of training examples
 X = [ones(m, 1), data(:,1)]; % Add a column of ones to x
 X = [X, X(:,2).^2]
 X = [X, X(:,2).^3]
-theta = zeros(4, 1); % initialize fitting parameters
+X = [X, X(:,2).^4]
+theta = zeros(5, 1); % initialize fitting parameters
 
 
 
 % Some gradient descent settings
 iterations = 1000000;
-alpha = 0.000001; %can be editted
+alpha = 0.000000003; %can be editted
 
 
 fprintf('\nRunning Gradient Descent ...\n')
@@ -37,7 +38,7 @@ hold off % don't overlay any more plots on this figure
 
 %Prediction for next day
 fprintf('Prediction for next day:\n');
-fprintf('%f\n', [1,m+1,(m+1)^2,(m+1)^3]*theta);
+fprintf('%f\n', [1,m+1,(m+1)^2,(m+1)^3,(m+1)^4]*theta);
 
 predlen= input("How many days you want me to predict?: \n");
 predict= future_prediction(predlen,m,theta);
@@ -60,5 +61,6 @@ disp(predict)
 % 1) X and theta initializations
 % 2) Iteration and alpha values
 % 3) future_prediction() function
+% 4) Prediction for next day fprintf line 41
 
 

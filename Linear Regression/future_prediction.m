@@ -5,7 +5,7 @@ function future = future_prediction(lenght,m,theta)
 
 
 for i=1:lenght
-    future(i) = [1,m+1,(m+1)^2,(m+1)^3]*theta;
+    future(i) = [1,m+1,(m+1)^2,(m+1)^3,(m+1)^4]*theta;
     m = m+1;
 end
 end
